@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rangkuman</title>
+    <style>
+        :root {
+            --primary: #4A90E2;
+            --primary-light: #EBF3FA;
+            --accent-pink: #FF6B81;
+            --accent-pink-light: #FFE8EC;
+            --accent-yellow: #FFA500;
+            --accent-yellow-light: #FFF8E7;
+            --accent-green: #2ECC71;
+            --text-main: #2C3E50;
+            --text-sub: #5A6B7C;
+            --bg-main: #F4F7FB;
+            --card-bg: #FFFFFF;
+            --shadow: 0 8px 24px rgba(149, 157, 165, 0.15);
+            --radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #4A90E2, #6C5CE7);
+            color: white;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--primary-light);
+            color: var(--primary);
+        }
+
+        .section-title .badge {
+            background-color: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-right: 12px;
+        }
+
+        /* Vocab Grid */
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .vocab-item {
+			display: flex;
+			align-items: center;			
+			gap: 16px;
+			border-bottom: 1px dashed #CBD5E1;
+		}
+
+		.vocab-num {
+            background: var(--primary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+		.vocab-hanzi {
+			flex: 0.8;
+			text-align: center;
+			font-size: 1.2rem;
+			font-weight: 500;
+			color: var(--text-main);
+		}
+
+		.vocab-pinyin {
+			flex: 1;
+			text-align: center;
+			font-size: 1.1rem;
+			color: var(--primary);
+			font-weight: 400;
+		}
+
+		.vocab-meaning {
+			flex: 1.2;
+			text-align: center;
+			font-size: 1.1rem;
+			color: var(--text-sub);
+			font-weight: 400;
+		}
+
+        @media (max-width: 600px) {
+            .vocab-item {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .vocab-meaning {
+                width: 100%;
+                padding-left: 36px;
+            }
+        }
+
+        /* Sentences Layout */
+        .sentences-group {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .sentence-card {
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 16px;
+        }
+
+        .sentence-card h4 {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .sentence-list {
+            list-style: none;
+        }
+
+        .sentence-list li {
+            font-size: 1.1rem;
+            padding: 10px 0;
+            border-bottom: 3px dashed #CBD5E1;
+            line-height: 1.8;
+        }
+
+        .sentence-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Stroke Grid */
+        .stroke-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .stroke-item {
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            background-color: #FAFAFA;
+        }
+
+        .stroke-char {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .stroke-pinyin {
+            font-size: 1.3rem;
+            color: var(--text-sub);
+        }
+
+        .stroke-highlight {
+            color: #E74C3C;
+            font-weight: bold;
+        }
+		
+		.button-box{
+			text-align:center;
+			margin-top:30px;
+		}
+
+		.btn{
+			display:inline-block;
+			text-decoration:none;
+			padding: 22px 48px;
+			border-radius: 50px;
+			background: linear-gradient(90deg, #c084fc, #22d3ee);
+			color: white;
+			font-weight: 700;
+			font-size: 1.2rem;
+			transition: .3s;
+			box-shadow: 0 4px 15px rgba(192, 132, 252, 0.3);
+		}
+
+		.btn:hover{
+			transform: scale(1.05);
+			box-shadow: 0 0 25px rgba(34, 211, 238, .5);
+		}
+
+		@media (max-width: 600px) {
+			.button-box {
+				width: 100%;
+				margin-top: 25px;
+				padding: 0 10px;
+			}
+
+			.btn {
+				display: block;
+				width: 100%;
+				max-width: 500px;
+				margin: 0 auto;
+				padding: 20px 24px;
+				font-size: 1.2rem;
+				text-align: center;
+				border-radius: 50px;
+			}
+		}
+
+		.footer {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 1.1rem;
+            color: #54809b;
+            opacity: 0.8;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header>
+        <h1>第二课 | 谁去田里工作？</h1>
+        <p>Bab. 2 | Siapa yang bekerja di sawah?</p>
+    </header>
+
+    <!-- Section 1: Vocabulary -->
+    <div class="section-card">
+        <div class="section-title">
+            <span class="badge">1</span> 记生词<br>Menghafal Kosakata
+        </div>
+        <div class="vocab-grid">
+            <div class="vocab-item">
+                <span class="vocab-num">1</span>
+				<span class="vocab-hanzi">父亲</span>
+                <span class="vocab-pinyin">fù qīn</span>
+                <span class="vocab-meaning">Ayah</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">2</span>
+				<span class="vocab-hanzi">母亲</span>
+                <span class="vocab-pinyin">mǔ qīn</span>
+                <span class="vocab-meaning">Ibu</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">3</span>
+                <span class="vocab-hanzi">养活</span>
+                <span class="vocab-pinyin">yǎnɡ huó</span>
+                <span class="vocab-meaning">Menafkahi</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">4</span>
+                <span class="vocab-hanzi">主意</span>
+                <span class="vocab-pinyin">zhǔ yì</span>
+                <span class="vocab-meaning">Ide</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">5</span>
+                <span class="vocab-hanzi">孝顺</span>
+                <span class="vocab-pinyin">xiào shùn</span>
+                <span class="vocab-meaning">Berbakti</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">6</span>
+                <span class="vocab-hanzi">便宜</span>
+                <span class="vocab-pinyin">pián yi</span>
+                <span class="vocab-meaning">Murah</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">7</span>
+                <span class="vocab-hanzi">种田</span>
+                <span class="vocab-pinyin">zhònɡ tián</span>
+                <span class="vocab-meaning">Bertani</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">8</span>
+                <span class="vocab-hanzi">比</span>
+                <span class="vocab-pinyin">bǐ</span>
+                <span class="vocab-meaning">Dibandingkan</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">9</span>
+                <span class="vocab-hanzi">强壮</span>
+                <span class="vocab-pinyin">qiánɡ zhuànɡ</span>
+                <span class="vocab-meaning">Kuat</span>
+            </div>
+			<div class="vocab-item">
+                <span class="vocab-num">10</span>
+                <span class="vocab-hanzi">轮流</span>
+                <span class="vocab-pinyin">lún liú</span>
+                <span class="vocab-meaning">Bergiliran</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Key Sentences -->
+    <div class="section-card">
+        <div class="section-title">
+            <span class="badge">2</span> 学句子<br>Belajar Kalimat
+        </div>
+        <div class="sentences-group">
+            <div class="sentence-card">
+                <h4></h4>
+                <ul class="sentence-list">
+                    <li>cónɡ qián, yǒu xiōnɡ dì liǎnɡ rén, tā men hái xiǎo, fù qīn jiù qù shì le<br>从 前，有 兄 弟 两 人，他 们 还 小，父 亲 就 去 世 了 。<br>Dahulu kala, hiduplah dua orang bersaudara. Ketika mereka masih kecil, ayah mereka meninggal dunia.</li>
+                    <li>mǔ qīn tì rén zuò yì xiē yī fú, yǎnɡ huó tā men<br>母 亲 替 人 做 一 些 衣 服，养 活 他 们 。<br>Ibu menghidupi mereka dengan menjahit pakaian untuk orang lain.</li>
+                    <li>hòu lái, mǔ qīn lǎo le, xiōnɡ dì liǎnɡ rén qǐnɡ qiú mǔ qīn bú yào zài ɡōnɡ zuò le<br>后 来，母 亲 老 了，兄 弟 两 人 请 求 母 亲 不 要 再 工 作 了 。<br>Kemudian, saat ibu sudah tua, kedua bersaudara itu memohon agar sang ibu berhenti bekerja.</li>
+                    <li>ɡē ɡe duì dì di shuō: zhònɡ tián hěn xīn kǔ, nǐ liú zài jiā lǐ ba<br>哥 哥 对 弟 弟 说：“种 田 很 辛 苦，你 留 在 家 里 吧 。”<br>Sang kakak berkata kepada adiknya: "Bertani sangat melelahkan, kamu tinggal di rumah saja." </li>
+					<li>dì di shuō: nǐ shēn tǐ ruò, wǒ bǐ nǐ qiánɡ zhuànɡ, wǒ qù<br>”弟 弟 说：“你 身 体 弱，我 比 你 强 壮，我 去 。”<br>Si adik berkata: "Tubuhmu lemah, aku lebih kuat darimu, biar saya saja yang pergi."</li>
+					<li>zuì hòu, dì di xiǎnɡ chū le yí ɡè hǎo zhǔ yì<br>最 后，弟 弟 想 出 了 一 个 好 主 意 。<br>Akhirnya, si adik mendapat sebuah ide yang bagus.</li>
+					<li>tā men lún liú dào wánɡ lǎo bó tián lǐ ɡōnɡ zuò<br>他 们 轮 流 到 王 老 伯 田 里 工 作 。<br>Mereka bergiliran bekerja di sawah Paman Wang.</li>
+					<li>wánɡ lǎo bó dā yìnɡ le, hái chēnɡ zàn tā men liǎnɡ xiōnɡ dì hěn xiào shùn<br>王 老 伯 答 应 了，还 称 赞 他 们 两 兄 弟 很 孝 顺 。<br>Paman Wang menyetujuinya dan memuji kedua bersaudara itu sangat berbakti.</li>
+					<li>zhè jiàn yī fú de jià qián bǐ nà jiàn pián yi yì diǎn er<br>这 件 衣 服 的 价 钱 比 那 件 便 宜 一 点 儿 。<br>Harga baju ini sedikit lebih murah daripada baju itu.</li>
+					<li>wǒ de fā yīn bǐ yǐ qián ɡènɡ biāo zhǔn le<br>我 的 发 音 比 以 前 更 标 准 了 。<br>Pelafalanku kini lebih tepat/standar daripada sebelumnya.</li>
+					<li>liǎnɡ ɡè rén shānɡ lianɡ le hěn jiǔ, hái shì méi yǒu jié ɡuǒ<br>两 个 人 商 量 了 很 久，还 是 没 有 结 果 。<br>Mereka berdua berdiskusi sangat lama, namun tetap tidak membuahkan hasil.</li>
+                    <li>fù mǔ qīn xīn kǔ de ɡōnɡ zuò lái yǎnɡ huó hái zi men<br>父 母 亲 辛 苦 地 工 作 来 养 活 孩 子 们 。<br>Orang tua bekerja keras demi menghidupi anak-anak mereka.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 3: Writing / Chinese Characters -->
+    <div class="section-card">
+        <div class="section-title">
+            <span class="badge">3</span> 写汉字<br>Menulis Huruf Mandarin
+        </div>
+        <p style="margin-bottom: 16px; color: var(--text-sub);"></p>
+        <div class="stroke-grid">
+            <div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">fù</span></div>
+				<div class="stroke-char">父</div>
+            </div>
+            <div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">mǔ</span></div>
+				<div class="stroke-char">母</div>
+            </div>
+            <div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">qīn</span></div>
+				<div class="stroke-char">亲</div>
+            </div>
+            <div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">yǎnɡ</span></div>
+				<div class="stroke-char">养</div>
+            </div>
+            <div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">huó</span></div>
+				<div class="stroke-char">活</div>
+            </div>
+			<div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">zhǔ</span></div>
+				<div class="stroke-char">主</div>  
+            </div>
+			<div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">yì</span></div>
+				<div class="stroke-char">意</div>
+            </div>
+			<div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">xiào</span></div>
+				<div class="stroke-char">孝</div>
+            </div>
+			<div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">shùn</span></div>
+				<div class="stroke-char">顺</div>
+            </div>
+			<div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">zhònɡ</span></div>
+				<div class="stroke-char">种</div>
+            </div>
+			<div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">tián</span></div>
+				<div class="stroke-char">田</div>
+            </div>
+			<div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">bǐ</span></div>
+				<div class="stroke-char">比</div>
+            </div>
+			<div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">qiánɡ</span></div>
+				<div class="stroke-char">强</div>
+            </div>
+			<div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">zhuànɡ</span></div>
+				<div class="stroke-char">壮</div>
+            </div>
+			<div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">lún</span></div>
+				<div class="stroke-char">轮</div>
+            </div>
+			<div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">liú</span></div>
+				<div class="stroke-char">流</div>
+            </div>
+        </div>
+    </div>
+	
+	<div class="button-box">
+		<a href="https://sujianduo.github.io/Kelas-9/" class="btn" target="_blank">
+		开始做练习题<br>Mulai mengerjakan soal latihan
+		</a>
+	</div>
+	<div class="footer">⭐ SMP WIDYA DHARMA BANJARMASIN ⭐</div>
+
+</div>
+
+</body>
+</html>
