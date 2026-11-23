@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rangkuman</title>
+    <title>Rangkuman SAS Bahasa Mandarin Kelas 9 Semester 1</title>
     <style>
         :root {
             --primary: #4A90E2;
@@ -97,13 +97,18 @@
         }
 
         .vocab-item {
-			display: flex;
-			align-items: center;			
-			gap: 16px;
-			border-bottom: 1px dashed #CBD5E1;
-		}
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 8px 0;
+            border-bottom: 1px dashed #CBD5E1;
+        }
 
-		.vocab-num {
+        .vocab-item:last-child {
+            border-bottom: none;
+        }
+
+        .vocab-num {
             background: var(--primary);
             color: white;
             width: 28px;
@@ -114,31 +119,32 @@
             justify-content: center;
             font-size: 0.85rem;
             font-weight: bold;
+            flex-shrink: 0;
         }
 
-		.vocab-hanzi {
-			flex: 0.8;
-			text-align: center;
-			font-size: 1.2rem;
-			font-weight: 500;
-			color: var(--text-main);
-		}
+        .vocab-hanzi {
+            flex: 0.8;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
 
-		.vocab-pinyin {
-			flex: 1;
-			text-align: center;
-			font-size: 1.1rem;
-			color: var(--primary);
-			font-weight: 400;
-		}
+        .vocab-pinyin {
+            flex: 1;
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 400;
+        }
 
-		.vocab-meaning {
-			flex: 1.2;
-			text-align: center;
-			font-size: 1.1rem;
-			color: var(--text-sub);
-			font-weight: 400;
-		}
+        .vocab-meaning {
+            flex: 1.2;
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            font-weight: 400;
+        }
 
         @media (max-width: 600px) {
             .vocab-item {
@@ -219,57 +225,56 @@
             color: #E74C3C;
             font-weight: bold;
         }
-		
-		.button-box{
-			text-align:center;
-			margin-top:30px;
-		}
 
-		.btn{
-			display:inline-block;
-			text-decoration:none;
-			padding: 22px 48px;
-			border-radius: 50px;
-			background: linear-gradient(90deg, #c084fc, #22d3ee);
-			color: white;
-			font-weight: 700;
-			font-size: 1.2rem;
-			transition: .3s;
-			box-shadow: 0 4px 15px rgba(192, 132, 252, 0.3);
-		}
+        .button-box {
+            text-align: center;
+            margin-top: 30px;
+        }
 
-		.btn:hover{
-			transform: scale(1.05);
-			box-shadow: 0 0 25px rgba(34, 211, 238, .5);
-		}
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 22px 48px;
+            border-radius: 50px;
+            background: linear-gradient(90deg, #c084fc, #22d3ee);
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: .3s;
+            box-shadow: 0 4px 15px rgba(192, 132, 252, 0.3);
+        }
 
-		@media (max-width: 600px) {
-			.button-box {
-				width: 100%;
-				margin-top: 25px;
-				padding: 0 10px;
-			}
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(34, 211, 238, .5);
+        }
 
-			.btn {
-				display: block;
-				width: 100%;
-				max-width: 500px;
-				margin: 0 auto;
-				padding: 20px 24px;
-				font-size: 1.2rem;
-				text-align: center;
-				border-radius: 50px;
-			}
-		}
+        @media (max-width: 600px) {
+            .button-box {
+                width: 100%;
+                margin-top: 25px;
+                padding: 0 10px;
+            }
 
-		.footer {
+            .btn {
+                display: block;
+                width: 100%;
+                max-width: 500px;
+                margin: 0 auto;
+                padding: 20px 24px;
+                font-size: 1.2rem;
+                text-align: center;
+                border-radius: 50px;
+            }
+        }
+
+        .footer {
             text-align: center;
             margin-top: 25px;
             font-size: 1.1rem;
             color: #54809b;
             opacity: 0.8;
         }
-
     </style>
 </head>
 <body>
@@ -278,8 +283,8 @@
 
     <!-- Header -->
     <header>
-        <h1>第三课 | 牛顿请客</h1>
-        <p>Bab. 3 | Newton menjamu tamu / mentraktir</p>
+        <h1>九年级第一学期期末考试复习概要 | 汉语</h1>
+        <p>Rangkuman SAS Bahasa Mandarin | Kelas 9 Semester 1</p>
     </header>
 
     <!-- Section 1: Vocabulary -->
@@ -289,64 +294,154 @@
         </div>
         <div class="vocab-grid">
             <div class="vocab-item">
-                <span class="vocab-num">1</span>   
-				<span class="vocab-hanzi">闻名</span>
-                <span class="vocab-pinyin">wén mínɡ</span>
-                <span class="vocab-meaning">Terkenal</span>
-            </div>
-            <div class="vocab-item">
-                <span class="vocab-num">2</span>   
-				<span class="vocab-hanzi">出生</span>
-                <span class="vocab-pinyin">chū shēnɡ</span>
-                <span class="vocab-meaning">Lahir</span>
-            </div>
-            <div class="vocab-item">
-                <span class="vocab-num">3</span>   
-                <span class="vocab-hanzi">一切</span>
-                <span class="vocab-pinyin">yí qiè</span>
-                <span class="vocab-meaning">Semua</span>
-            </div>
-            <div class="vocab-item">
-                <span class="vocab-num">4</span>   
-                <span class="vocab-hanzi">脾气</span>
-                <span class="vocab-pinyin">pí qì</span>
-                <span class="vocab-meaning">Sifat / temperamen</span>
-            </div>
-            <div class="vocab-item">
-                <span class="vocab-num">5</span>   
-                <span class="vocab-hanzi">打扰</span>
-                <span class="vocab-pinyin">dǎ rǎo</span>
-                <span class="vocab-meaning">Mengganggu</span>
-            </div>
-            <div class="vocab-item">
-                <span class="vocab-num">6</span>   
-                <span class="vocab-hanzi">决定</span>
-                <span class="vocab-pinyin">jué dìnɡ</span>
-                <span class="vocab-meaning">Memutuskan</span>
-            </div>
-            <div class="vocab-item">
-                <span class="vocab-num">7</span>   
+                <span class="vocab-num">1</span>
                 <span class="vocab-hanzi">月饼</span>
                 <span class="vocab-pinyin">yuè bǐnɡ</span>
                 <span class="vocab-meaning">Kue bulan</span>
             </div>
             <div class="vocab-item">
-                <span class="vocab-num">8</span>   
-                <span class="vocab-hanzi">连忙</span>
-                <span class="vocab-pinyin">lián mánɡ</span>
-                <span class="vocab-meaning">Buru-buru / dengan segera</span>
+                <span class="vocab-num">2</span>
+                <span class="vocab-hanzi">母亲</span>
+                <span class="vocab-pinyin">mǔ qīn</span>
+                <span class="vocab-meaning">Ibu</span>
             </div>
             <div class="vocab-item">
-                <span class="vocab-num">9</span>   
-                <span class="vocab-hanzi">专心</span>
-                <span class="vocab-pinyin">zhuān xīn</span>
-                <span class="vocab-meaning">Fokus</span>
+                <span class="vocab-num">3</span>
+                <span class="vocab-hanzi">一切</span>
+                <span class="vocab-pinyin">yí qiè</span>
+                <span class="vocab-meaning">Semua</span>
             </div>
-			<div class="vocab-item">
-                <span class="vocab-num">10</span>   
+            <div class="vocab-item">
+                <span class="vocab-num">4</span>
+                <span class="vocab-hanzi">脾气</span>
+                <span class="vocab-pinyin">pí qì</span>
+                <span class="vocab-meaning">Sifat / temperamen</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">5</span>
+                <span class="vocab-hanzi">父亲</span>
+                <span class="vocab-pinyin">fù qīn</span>
+                <span class="vocab-meaning">Ayah</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">6</span>
+                <span class="vocab-hanzi">便宜</span>
+                <span class="vocab-pinyin">pián yi</span>
+                <span class="vocab-meaning">Murah</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">7</span>
+                <span class="vocab-hanzi">养活</span>
+                <span class="vocab-pinyin">yǎnɡ huó</span>
+                <span class="vocab-meaning">Menafkahi</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">8</span>
+                <span class="vocab-hanzi">主意</span>
+                <span class="vocab-pinyin">zhǔ yì</span>
+                <span class="vocab-meaning">Ide</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">9</span>
+                <span class="vocab-hanzi">孝顺</span>
+                <span class="vocab-pinyin">xiào shùn</span>
+                <span class="vocab-meaning">Berbakti</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">10</span>
+                <span class="vocab-hanzi">决定</span>
+                <span class="vocab-pinyin">jué dìnɡ</span>
+                <span class="vocab-meaning">Memutuskan</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">11</span>
+                <span class="vocab-hanzi">兴趣</span>
+                <span class="vocab-pinyin">xìnɡ qù</span>
+                <span class="vocab-meaning">Minat</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">12</span>
+                <span class="vocab-hanzi">出生</span>
+                <span class="vocab-pinyin">chū shēnɡ</span>
+                <span class="vocab-meaning">Lahir</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">13</span>
+                <span class="vocab-hanzi">修建</span>
+                <span class="vocab-pinyin">xiū jiàn</span>
+                <span class="vocab-meaning">Membangun</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">14</span>
                 <span class="vocab-hanzi">悄悄</span>
                 <span class="vocab-pinyin">qiāo qiāo</span>
                 <span class="vocab-meaning">Diam-diam</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">15</span>
+                <span class="vocab-hanzi">一样</span>
+                <span class="vocab-pinyin">yí yànɡ</span>
+                <span class="vocab-meaning">Sama</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">16</span>
+                <span class="vocab-hanzi">锯子</span>
+                <span class="vocab-pinyin">jù zi</span>
+                <span class="vocab-meaning">Gergaji</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">17</span>
+                <span class="vocab-hanzi">锋利</span>
+                <span class="vocab-pinyin">fēnɡ lì</span>
+                <span class="vocab-meaning">Tajam</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">18</span>
+                <span class="vocab-hanzi">理想</span>
+                <span class="vocab-pinyin">lǐ xiǎnɡ</span>
+                <span class="vocab-meaning">Cita-cita / ideal</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">19</span>
+                <span class="vocab-hanzi">需要</span>
+                <span class="vocab-pinyin">xū yào</span>
+                <span class="vocab-meaning">Membutuhkan</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">20</span>
+                <span class="vocab-hanzi">跟</span>
+                <span class="vocab-pinyin">ɡēn</span>
+                <span class="vocab-meaning">Dengan / ikut</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">21</span>
+                <span class="vocab-hanzi">如果</span>
+                <span class="vocab-pinyin">rú ɡuǒ</span>
+                <span class="vocab-meaning">Kalau / jika</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">22</span>
+                <span class="vocab-hanzi">制作</span>
+                <span class="vocab-pinyin">zhì zuò</span>
+                <span class="vocab-meaning">Membuat</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">23</span>
+                <span class="vocab-hanzi">中国</span>
+                <span class="vocab-pinyin">zhōnɡ ɡuó</span>
+                <span class="vocab-meaning">Tiongkok</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">24</span>
+                <span class="vocab-hanzi">工具</span>
+                <span class="vocab-pinyin">ɡōnɡ jù</span>
+                <span class="vocab-meaning">Alat</span>
+            </div>
+            <div class="vocab-item">
+                <span class="vocab-num">25</span>
+                <span class="vocab-hanzi">善于</span>
+                <span class="vocab-pinyin">shàn yú</span>
+                <span class="vocab-meaning">Pandai / mahir</span>
             </div>
         </div>
     </div>
@@ -360,17 +455,17 @@
             <div class="sentence-card">
                 <h4></h4>
                 <ul class="sentence-list">
-                    <li>Niúdùn shì shìjiè wénmíng de dà kēxuéjiā<br>牛 顿 是 世 界 闻 名 的 大 科 学 家 。<br>Newton adalah ilmuwan besar yang terkenal di dunia.</li>
-                    <li>Tā chūshēng zài Yīngguó de yí gè nóngjiā<br>他 出 生 在 英 国 的 一 个 农 家 。<br>Ia dilahirkan di sebuah keluarga petani di Inggris.</li>
-                    <li>Xuéxí, gōngzuò dōu hěn zhuānxīn<br>学 习 、工 作 都 很 专 心 。<br>(Dia) sangat fokus dan tekun dalam belajar maupun bekerja.</li>
-                    <li>Kèrénmen dōu zhīdào tā de píqì<br>客 人 们 都 知 道 他 的 脾 气 。<br>Para tamu semua sudah tahu sifatnya.</li>
-					<li>Tā gōngzuò qǐlái shì huì wàngjì yíqiè de<br>他 工 作 起 来 是 会 忘 记 一 切 的 。<br>Ketika sedang bekerja, ia bisa melupakan segalanya.</li>
-					<li>Rúguǒ zhèshí qù dǎrǎo tā, tā huì hěn bù gāoxìng<br>如 果 这 时 去 打 扰 他 ，他 会 很 不 高 兴 。<br>Jika ia diganggu pada saat seperti ini, ia akan sangat kesal.</li>
-					<li>Kèrénmen shāngliang le yíxià, juédìng biān chī biān děng<br>客 人 们 商 量 了 一 下 ，决 定 边 吃 边 等 。<br>Para tamu berunding sebentar, lalu memutuskan untuk makan sambil menunggu.</li>
-					<li>Méibànfǎ, kèrénmen zhǐhǎo qiāoqiāo de zǒu le<br>没 办 法 ，客 人 们 只 好 悄 悄 地 走 了 。<br>Tidak ada pilihan lain, para tamu pun akhirnya diam-diam pergi.</li>
-					<li>Niúdùn liánmáng pǎo chūlái<br>牛 顿 连 忙 跑 出 来 。<br>Newton segera berlari keluar.</li>
-					<li>Bàba gěi nǎinai jì qù yī hé yuèbǐng<br>爸 爸 给 奶 奶 寄 去 一 盒 月 饼 。<br>Ayah mengirimkan satu kotak kue bulan kepada Nenek.</li>
-                    <li>shūshu ɡěi wǒ mǎilái yíɡè zhàoxiànɡjī<br>叔 叔 给 我 买 来 一 个 照 相 机 。<br>Paman membelikan saya sebuah kamera.</li>
+                    <li>zhè jiàn yī fu de jià qián bǐ nà jiàn pián yi yì diǎnr<br>这 件 衣 服 的 价 钱 比 那 件 便 宜 一 点 儿 。<br>Harga baju ini lebih murah sedikit daripada baju itu.</li>
+                    <li>bà ba ɡěi nǎi nai jì qù yì hé yuè bǐnɡ<br>爸 爸 给 奶 奶 寄 去 一 盒 月 饼 。<br>Ayah mengirim sekotak kue bulan untuk nenek.</li>
+                    <li>wǒ de lǐ xiǎnɡ ɡēn tā de bù yí yànɡ<br>我 的 理 想 跟 他 的 不 一 样 。<br>Cita-cita saya tidak sama dengan cita-citanya.</li>
+                    <li>jù zi shì zhōnɡ ɡuó rén fā mínɡ de<br>锯 子 是 中 国 人 发 明 的 。<br>Gergaji diciptakan / ditemukan oleh orang Tiongkok.</li>
+                    <li>nà liǎnɡ zhānɡ zhào piàn bù yí yànɡ<br>那 两 张 照 片 不 一 样 。<br>Kedua lembar foto itu tidak sama.</li>
+					<li>hòu lái, mǔ qīn lǎo le, xiōng dì liǎng rén qǐng qiú mǔ qīn bú yào zài gōng zuò le.<br>后 来，母 亲 老 了，兄 弟 两 人 请 求 母 亲 不 要 再 工 作 了 。<br>Kemudian, ketika ibu sudah tua, kedua saudara laki-laki itu meminta ibu untuk tidak bekerja lagi.</li>
+					<li>kè rén men shāng liang le yí xià, jué dìng biān chī biān děng.<br>客 人 们 商 量 了 一 下，决 定 边 吃 边 等 。<br>Para tamu berdiskusi sebentar, lalu memutuskan untuk makan sambil menunggu.</li>
+					<li>méi bàn fǎ, kè rén men zhǐ hǎo qiāo qiāo de zǒu le.<br>没 办 法，客 人 们 只 好 悄 悄 地 走 了 。<br>Tidak ada cara lain, para tamu terpaksa pergi dengan diam-diam.</li>
+					<li>rén men yòng fǔ tou kǎn shù xiū jiàn fáng zi.<br>人 们 用 斧 头 砍 树 修 建 房 子 。<br>Orang-orang menggunakan kapak untuk menebang pohon dan membangun rumah.</li>
+					<li>xiǎo cǎo de xì chǐ gēn jù zi yí yàng fēng lì.<br>小 草 的 细 齿 跟 锯 子 一 样 锋 利 。<br>Gigi halus pada rumput kecil itu setajam gergaji.</li>
+					<li>wǒ men de xìng qù yí yàng, dōu xǐ huān huà huàr.<br>我 们 的 兴 趣 一 样，都 喜 欢 画 画 儿 。<br>Minat kami sama, sama-sama suka menggambar.</li>
                 </ul>
             </div>
         </div>
@@ -384,90 +479,54 @@
         <p style="margin-bottom: 16px; color: var(--text-sub);"></p>
         <div class="stroke-grid">
             <div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">wén</span></div>
-				<div class="stroke-char">闻</div>
+                <div class="stroke-pinyin"><span class="stroke-highlight">mǔ qīn</span></div>
+                <div class="stroke-char">母亲</div>
             </div>
             <div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">mínɡ</span></div>
-				<div class="stroke-char">名</div>
+                <div class="stroke-pinyin"><span class="stroke-highlight">pián yi</span></div>
+                <div class="stroke-char">便宜</div>
             </div>
             <div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">chū</span></div>
-				<div class="stroke-char">出</div> 
+                <div class="stroke-pinyin"><span class="stroke-highlight">yuè bǐnɡ</span></div>
+                <div class="stroke-char">月饼</div>
             </div>
             <div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">shēnɡ</span></div>
-				<div class="stroke-char">生</div>
+                <div class="stroke-pinyin"><span class="stroke-highlight">jué dìnɡ</span></div>
+                <div class="stroke-char">决定</div>
             </div>
             <div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">yī</span></div>
-				<div class="stroke-char">一</div> 
+                <div class="stroke-pinyin"><span class="stroke-highlight">qiāo qiāo</span></div>
+                <div class="stroke-char">悄悄</div>
             </div>
-			<div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">qiē</span></div>
-				<div class="stroke-char">切</div>  
+            <div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">jù zi</span></div>
+                <div class="stroke-char">锯子</div>
             </div>
-			<div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">pí</span></div>
-				<div class="stroke-char">脾</div> 
+            <div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">xiū jiàn</span></div>
+                <div class="stroke-char">修建</div>
             </div>
-			<div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">qì</span></div>
-				<div class="stroke-char">气</div>
+            <div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">fēnɡ lì</span></div>
+                <div class="stroke-char">锋利</div>
             </div>
-			<div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">dǎ</span></div>
-				<div class="stroke-char">打</div> 
+            <div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">yí yànɡ</span></div>
+                <div class="stroke-char">一样</div>
             </div>
-			<div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">rǎo</span></div>
-				<div class="stroke-char">扰</div>
-            </div>
-			<div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">jué</span></div>
-				<div class="stroke-char">决</div> 
-            </div>
-			<div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">dìnɡ</span></div>
-				<div class="stroke-char">定</div>
-            </div>
-			<div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">yuè</span></div>
-				<div class="stroke-char">月</div> 
-            </div>
-			<div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">bǐnɡ</span></div>
-				<div class="stroke-char">饼</div>
-            </div>
-			<div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">lián</span></div>
-				<div class="stroke-char">连</div> 
-            </div>
-			<div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">mánɡ</span></div>
-				<div class="stroke-char">忙</div>
-            </div>
-			<div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">zhuān</span></div>
-				<div class="stroke-char">专</div> 
-            </div>
-			<div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">xīn</span></div>
-				<div class="stroke-char">心</div>
-            </div>
-			<div class="stroke-item">
-                <div class="stroke-pinyin"><span class="stroke-highlight">qiāo</span></div>
-				<div class="stroke-char">悄</div> 
+            <div class="stroke-item">
+                <div class="stroke-pinyin"><span class="stroke-highlight">xìnɡ qù</span></div>
+                <div class="stroke-char">兴趣</div>
             </div>
         </div>
     </div>
-	
-	<div class="button-box">
-		<a href="https://sujianduo.github.io/Kelas-9/" class="btn" target="_blank">
-		开始做练习题<br>Mulai mengerjakan soal latihan
-		</a>
-	</div>
-	<div class="footer">⭐ SMP WIDYA DHARMA BANJARMASIN ⭐</div>
+
+    <div class="button-box">
+        <a href="https://sujianduo.github.io/Kelas-9/" class="btn" target="_blank">
+            开始做练习题<br>Mulai mengerjakan soal latihan
+        </a>
+    </div>
+    <div class="footer">⭐ SMP WIDYA DHARMA BANJARMASIN ⭐</div>
 
 </div>
 
